@@ -45,7 +45,7 @@ class GameLogicUI: SKScene {
             atlas.textureNamed(Constants.ChipImages.blackChip)
         let chip = SKSpriteNode(texture: texture, size: chipSize)
         chip.zPosition = 1
-        chip.userData = [Constants.chipUserDataKey:color.rawValue]
+        //chip.userData = [Constants.chipUserDataKey:color.rawValue]
         cell.addChild(chip)
     }
 
@@ -53,19 +53,21 @@ class GameLogicUI: SKScene {
         let cell = childNodeWithName("\(row)\(column)") as! SKSpriteNode
         let chip = cell.children[0] as! SKSpriteNode
         let savedWidth = chip.frame.width
-        let resizeToLine = SKAction.resizeToWidth(2, duration: 0.35)
+        let resizeToLine = SKAction.resizeToWidth(2, duration: 0.5)
         let texture = color == .White ?
             atlas.textureNamed(Constants.ChipImages.whiteChip) :
             atlas.textureNamed(Constants.ChipImages.blackChip)
         let changeColor = SKAction.setTexture(texture)
-        let restoreWidth = SKAction.resizeToWidth(savedWidth, duration: 0.35)
+        let restoreWidth = SKAction.resizeToWidth(savedWidth, duration: 0.5)
+        let delay = SKAction.waitForDuration(0.5)
         let sequence = SKAction.sequence(
             [resizeToLine,
-                changeColor,
-                restoreWidth])
+             changeColor,
+             restoreWidth,
+             delay])
 
         chip.runAction(sequence, completion: {chip.texture = texture})
-        chip.userData = ["Color":color.rawValue]
+        //chip.userData = ["Color":color.rawValue]
     }
 
     func displayAlert(text: String) {
@@ -112,15 +114,15 @@ class GameLogicUI: SKScene {
         let boxSideLength = (size)/8
         let squareSize = CGSizeMake(boxSideLength, boxSideLength)
         // draw board
-        let yOffset: CGFloat = (boxSideLength/2.0)
+        let yOffset: CGFloat = (boxSideLength/2)
         for row in 0..<8 {
-            let xOffset: CGFloat = (boxSideLength/2.0)
+            let xOffset: CGFloat = (boxSideLength/2)
             for col in 0..<8 {
                 let square = SKSpriteNode(
                     texture: atlas.textureNamed(Constants.cellImage),
                     size: squareSize)
-                square.position = CGPointMake(CGFloat(col) * squareSize.width + xOffset,
-                    CGFloat(row) * squareSize.height + yOffset)
+                square.position = CGPointMake(CGFloat(col) * squareSize.width +
+                    xOffset, CGFloat(row) * squareSize.height + yOffset)
                 // Set sprite's name in row-col format(e.g., "07", "25")
                 square.name = "\(row)\(col)"
                 self.addChild(square)

@@ -62,7 +62,8 @@ class GameLogic {
             }
         } else { // player must pass
             alertActive = true
-            gameScene.displayAlert("\(gameModel.currentPlayer.color) mast pass!")
+            gameScene.displayAlert(
+                "\(gameModel.currentPlayer.color) mast pass!")
         }
     }
 
@@ -71,8 +72,9 @@ class GameLogic {
         let strategist = GKMinmaxStrategist()
         strategist.gameModel = gameModel
         strategist.maxLookAheadDepth = 5
-        let delay = 0.9
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay*Double(NSEC_PER_SEC)))
+        let delay = 1.0
+        let time = dispatch_time(DISPATCH_TIME_NOW,
+            Int64(delay*Double(NSEC_PER_SEC)))
         let uQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
         dispatch_after(time, uQueue, {
             let move = strategist.bestMoveForActivePlayer() as! Move
