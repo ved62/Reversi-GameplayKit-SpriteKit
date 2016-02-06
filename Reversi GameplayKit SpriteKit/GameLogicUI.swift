@@ -9,7 +9,7 @@
 import Cocoa
 import SpriteKit
 
-class GameLogicUI: SKScene {
+final class GameLogicUI: SKScene {
     private var gameLogic: GameLogic!
     private var atlas: SKTextureAtlas!
 
@@ -45,7 +45,6 @@ class GameLogicUI: SKScene {
             atlas.textureNamed(Constants.ChipImages.blackChip)
         let chip = SKSpriteNode(texture: texture, size: chipSize)
         chip.zPosition = 1
-        //chip.userData = [Constants.chipUserDataKey:color.rawValue]
         cell.addChild(chip)
     }
 
@@ -53,21 +52,17 @@ class GameLogicUI: SKScene {
         let cell = childNodeWithName("\(row)\(column)") as! SKSpriteNode
         let chip = cell.children[0] as! SKSpriteNode
         let savedWidth = chip.frame.width
-        let resizeToLine = SKAction.resizeToWidth(2, duration: 0.5)
+        let resizeToLine = SKAction.resizeToWidth(2, duration: 0.4)
         let texture = color == .White ?
             atlas.textureNamed(Constants.ChipImages.whiteChip) :
             atlas.textureNamed(Constants.ChipImages.blackChip)
         let changeColor = SKAction.setTexture(texture)
-        let restoreWidth = SKAction.resizeToWidth(savedWidth, duration: 0.5)
-        let delay = SKAction.waitForDuration(0.5)
+        let restoreWidth = SKAction.resizeToWidth(savedWidth, duration: 0.4)
         let sequence = SKAction.sequence(
             [resizeToLine,
              changeColor,
-             restoreWidth,
-             delay])
-
+             restoreWidth])
         chip.runAction(sequence, completion: {chip.texture = texture})
-        //chip.userData = ["Color":color.rawValue]
     }
 
     func displayAlert(text: String) {
@@ -93,8 +88,8 @@ class GameLogicUI: SKScene {
     private func createAtlas() -> SKTextureAtlas {
         let chipImages = ChipImage()
         let dictionary = [
-            Constants.ChipImages.whiteChip: chipImages.whiteChip,
-            Constants.ChipImages.blackChip: chipImages.blackChip,
+            Constants.ChipImages.whiteChip: chipImages.whiteChipWithLight,
+            Constants.ChipImages.blackChip: chipImages.blackChipWithLight,
             Constants.cellImage: chipImages.cellImage ]
         return SKTextureAtlas(dictionary: dictionary)
     }

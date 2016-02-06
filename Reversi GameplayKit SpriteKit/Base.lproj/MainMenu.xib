@@ -15,7 +15,6 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Reversi_GameplayKit_SpriteKit" customModuleProvider="target">
             <connections>
                 <outlet property="gameView" destination="bK1-83-Jn9" id="xQt-vB-yhz"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>

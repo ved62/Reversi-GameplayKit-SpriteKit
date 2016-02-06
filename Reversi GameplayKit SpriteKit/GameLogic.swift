@@ -8,7 +8,7 @@
 
 import GameplayKit
 
-class GameLogic {
+final class GameLogic {
 
     private var gameScene: GameLogicUI
     private var gameModel = GameModel()
