@@ -10,6 +10,14 @@
 		99E1A2761C66343C0035A22D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2751C66343C0035A22D /* AppDelegate.swift */; };
 		99E1A2781C66343C0035A22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E1A2771C66343C0035A22D /* Assets.xcassets */; };
 		99E1A27B1C66343C0035A22D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E1A2791C66343C0035A22D /* MainMenu.xib */; };
+		99E1A28A1C6636420035A22D /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2831C6636420035A22D /* GameLogic.swift */; };
+		99E1A28B1C6636420035A22D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2841C6636420035A22D /* Common.swift */; };
+		99E1A28C1C6636420035A22D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2851C6636420035A22D /* Player.swift */; };
+		99E1A28D1C6636420035A22D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2861C6636420035A22D /* Constants.swift */; };
+		99E1A28E1C6636420035A22D /* ChipImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2871C6636420035A22D /* ChipImage.swift */; };
+		99E1A28F1C6636420035A22D /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2881C6636420035A22D /* GameModel.swift */; };
+		99E1A2901C6636420035A22D /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2891C6636420035A22D /* Move.swift */; };
+		99E1A2921C66369A0035A22D /* GameLogicUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2911C66369A0035A22D /* GameLogicUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +26,15 @@
 		99E1A2771C66343C0035A22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E1A27A1C66343C0035A22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		99E1A27C1C66343C0035A22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E1A2821C6634500035A22D /* Reversi GameplayKit SpriteKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Reversi GameplayKit SpriteKit.entitlements"; sourceTree = "<group>"; };
+		99E1A2831C6636420035A22D /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		99E1A2841C6636420035A22D /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		99E1A2851C6636420035A22D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		99E1A2861C6636420035A22D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		99E1A2871C6636420035A22D /* ChipImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipImage.swift; sourceTree = "<group>"; };
+		99E1A2881C6636420035A22D /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		99E1A2891C6636420035A22D /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		99E1A2911C66369A0035A22D /* GameLogicUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogicUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +67,16 @@
 		99E1A2741C66343C0035A22D /* Reversi GameplayKit SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				99E1A2821C6634500035A22D /* Reversi GameplayKit SpriteKit.entitlements */,
 				99E1A2751C66343C0035A22D /* AppDelegate.swift */,
+				99E1A2911C66369A0035A22D /* GameLogicUI.swift */,
+				99E1A2831C6636420035A22D /* GameLogic.swift */,
+				99E1A2841C6636420035A22D /* Common.swift */,
+				99E1A2851C6636420035A22D /* Player.swift */,
+				99E1A2861C6636420035A22D /* Constants.swift */,
+				99E1A2871C6636420035A22D /* ChipImage.swift */,
+				99E1A2881C6636420035A22D /* GameModel.swift */,
+				99E1A2891C6636420035A22D /* Move.swift */,
 				99E1A2771C66343C0035A22D /* Assets.xcassets */,
 				99E1A2791C66343C0035A22D /* MainMenu.xib */,
 				99E1A27C1C66343C0035A22D /* Info.plist */,
@@ -90,6 +116,11 @@
 				TargetAttributes = {
 					99E1A2711C66343C0035A22D = {
 						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -128,6 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E1A28D1C6636420035A22D /* Constants.swift in Sources */,
+				99E1A28C1C6636420035A22D /* Player.swift in Sources */,
+				99E1A28A1C6636420035A22D /* GameLogic.swift in Sources */,
+				99E1A28E1C6636420035A22D /* ChipImage.swift in Sources */,
+				99E1A2901C6636420035A22D /* Move.swift in Sources */,
+				99E1A28B1C6636420035A22D /* Common.swift in Sources */,
+				99E1A28F1C6636420035A22D /* GameModel.swift in Sources */,
+				99E1A2921C66369A0035A22D /* GameLogicUI.swift in Sources */,
 				99E1A2761C66343C0035A22D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Reversi GameplayKit SpriteKit/Reversi GameplayKit SpriteKit.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Reversi GameplayKit SpriteKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -242,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Reversi GameplayKit SpriteKit/Reversi GameplayKit SpriteKit.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Reversi GameplayKit SpriteKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

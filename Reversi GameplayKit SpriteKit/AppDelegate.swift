@@ -6,20 +6,23 @@
 //  Copyright © 2016 Vladislav Dembskiy. All rights reserved.
 //
 
-import Cocoa
+import SpriteKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var gameView: SKView!
 
+    private var gameScene: GameLogicUI!
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        gameScene = GameLogicUI(size: gameView.frame.size)
+        gameView.presentScene(gameScene)
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
     }
 
 
