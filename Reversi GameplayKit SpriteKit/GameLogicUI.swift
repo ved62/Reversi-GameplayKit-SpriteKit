@@ -13,9 +13,12 @@ final class GameLogicUI: SKScene {
     private var gameLogic: GameLogic!
     private var atlas: SKTextureAtlas!
 
+    private var gearSprite: SKSpriteNode!
+
     override func didMoveToView(view: SKView) {
         //create texture atlas for sprites
         atlas = createAtlas()
+        gearSprite = createGear()
         displayEmptyBoard()
         gameLogic = GameLogic(scene: self)
         gameLogic.setInitialBoard()
@@ -35,7 +38,6 @@ final class GameLogicUI: SKScene {
             gameLogic.cellPressed(row,column)
         }
     }
-
 
     func displayChip(color: CellType,row: Int,column: Int) {
         let cell = childNodeWithName("\(row)\(column)") as! SKSpriteNode
@@ -95,12 +97,37 @@ final class GameLogicUI: SKScene {
     }
 
     func updateCountsLabel(white: Int, black: Int) {
-        let label = childNodeWithName(Constants.countsLabelSpriteName) as! SKLabelNode
+        let label = childNodeWithName(Constants.countsLabelSpriteName)
+            as! SKLabelNode
         label.text = "White: \(white)  Black: \(black)"
     }
 
+    private func createGear() -> SKSpriteNode {
+        let gear = SKSpriteNode(imageNamed: "Gear")
+        let size = (self.size.width/8)*0.8
+        gear.size = CGSize(width: size, height: size)
+        return gear
+    }
+
     func showAIIndicator(yes: Bool) {
-        
+        if gearSprite != nil {
+            if yes {
+                let topSquare = self.childNodeWithName("74") as! SKSpriteNode
+                let y = topSquare.position.y + topSquare.size.height
+                gearSprite.position =
+                    CGPoint(x: topSquare.position.x-topSquare.size.width/2,
+                        y: y)
+                gearSprite.zPosition = 2
+                let action = SKAction.rotateByAngle(CGFloat(M_PI),
+                    duration:1.5)
+                gearSprite.runAction(
+                    SKAction.repeatActionForever(action))
+                self.addChild(gearSprite)
+            }
+            else {
+                gearSprite.removeFromParent()
+            }
+        }
     }
     
     private func displayEmptyBoard() {
@@ -143,7 +170,6 @@ final class GameLogicUI: SKScene {
         let fontSize = topSquare.frame.height * 0.8
         let y = topSquare.frame.maxY + (fontSize/2)
         let countsLabel = SKLabelNode(fontNamed: Constants.Fonts.countsFont)
-
         countsLabel.text = "White: 0  Black: 0"
         countsLabel.fontSize = fontSize
         countsLabel.position = CGPointMake(self.frame.midX, y)

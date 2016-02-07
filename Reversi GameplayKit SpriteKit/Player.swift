@@ -15,9 +15,7 @@ class Player: NSObject, GKGameModelPlayer {
     var playerId: Int {return id}
 
     let color: CellType
-/*
-    static let gamePlayers = [Player(playerColor: .White),Player(playerColor: .Black)]
-*/
+
     var opponent : Player {
         if self.color == .White {return gamePlayers[1]}
         else {return gamePlayers[0]}
