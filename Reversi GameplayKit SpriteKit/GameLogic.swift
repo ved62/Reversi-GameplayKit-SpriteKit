@@ -107,8 +107,8 @@ final class GameLogic {
             gameModel.currentPlayer = gameModel.currentPlayer.opponent
             if gameModel.currentPlayer == gamePlayers[1] {
                 aiMove() // let AI work
-                return
             }
+            return
         }
         if gameModel.currentPlayer == gamePlayers[0] {
             if isValidMove(gameModel.board, gameModel.currentPlayer.color,

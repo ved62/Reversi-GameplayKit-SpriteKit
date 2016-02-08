@@ -26,5 +26,5 @@ struct Constants {
     static let countsLabelSpriteName = "CountsLabel"
     static let alertSpriteName = "Alert"
 
-    static let chipUserDataKey = "Color"
+    static let gearImage = "Gear"
 }

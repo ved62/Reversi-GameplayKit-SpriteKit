@@ -13,7 +13,7 @@ final class GameLogicUI: SKScene {
     private var gameLogic: GameLogic!
     private var atlas: SKTextureAtlas!
 
-    private var gearSprite: SKSpriteNode!
+    private var gearSprite: SKSpriteNode! // used for indication AI activity
 
     override func didMoveToView(view: SKView) {
         //create texture atlas for sprites
@@ -103,7 +103,7 @@ final class GameLogicUI: SKScene {
     }
 
     private func createGear() -> SKSpriteNode {
-        let gear = SKSpriteNode(imageNamed: "Gear")
+        let gear = SKSpriteNode(imageNamed: Constants.gearImage)
         let size = (self.size.width/8)*0.8
         gear.size = CGSize(width: size, height: size)
         return gear
@@ -166,7 +166,7 @@ final class GameLogicUI: SKScene {
     }
 
     private func drawCountsLabel() {
-        let topSquare = self.childNodeWithName("70") as! SKSpriteNode
+        let topSquare = self.childNodeWithName("74") as! SKSpriteNode
         let fontSize = topSquare.frame.height * 0.8
         let y = topSquare.frame.maxY + (fontSize/2)
         let countsLabel = SKLabelNode(fontNamed: Constants.Fonts.countsFont)
