@@ -1,12 +1,12 @@
 //
 //  GameLogicUI.swift
-//  Reversi GameplayKit SpriteKit
+//
+//  Reversi OS X
 //
 //  Created by Владислав Эдуардович Дембский on 06.02.16.
 //  Copyright © 2016 Vladislav Dembskiy. All rights reserved.
 //
 
-import Cocoa
 import SpriteKit
 
 final class GameLogicUI: SKScene {
@@ -18,7 +18,7 @@ final class GameLogicUI: SKScene {
     override func didMoveToView(view: SKView) {
         //create texture atlas for sprites
         atlas = createAtlas()
-        gearSprite = createGear()
+        gearSprite = createAIIndicator()
         displayEmptyBoard()
         gameLogic = GameLogic(scene: self)
         gameLogic.setInitialBoard()
@@ -69,7 +69,7 @@ final class GameLogicUI: SKScene {
 
     func displayAlert(text: String) {
         let alert = SKLabelNode(fontNamed: Constants.Fonts.alertFont)
-        let topSquare = self.childNodeWithName("70") as! SKSpriteNode
+        let topSquare = self.childNodeWithName("74") as! SKSpriteNode
         let fontSize = topSquare.frame.height
         alert.fontSize = fontSize
         let x = self.frame.midX
@@ -102,32 +102,24 @@ final class GameLogicUI: SKScene {
         label.text = "White: \(white)  Black: \(black)"
     }
 
-    private func createGear() -> SKSpriteNode {
+    private func createAIIndicator() -> SKSpriteNode {
         let gear = SKSpriteNode(imageNamed: Constants.gearImage)
-        let size = (self.size.width/8)*0.8
+        let size = self.size.width/10
         gear.size = CGSize(width: size, height: size)
         return gear
     }
 
     func showAIIndicator(yes: Bool) {
-        if gearSprite != nil {
-            if yes {
-                let topSquare = self.childNodeWithName("74") as! SKSpriteNode
-                let y = topSquare.position.y + topSquare.size.height
-                gearSprite.position =
-                    CGPoint(x: topSquare.position.x-topSquare.size.width/2,
-                        y: y)
-                gearSprite.zPosition = 2
-                let action = SKAction.rotateByAngle(CGFloat(M_PI),
-                    duration:1.5)
-                gearSprite.runAction(
-                    SKAction.repeatActionForever(action))
-                self.addChild(gearSprite)
-            }
-            else {
+        if yes {
+            let y = self.frame.maxY-(gearSprite.size.height/2)-1
+            gearSprite.position = CGPoint(x: self.frame.midX, y: y)
+            gearSprite.zPosition = 2
+            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1.5)
+            gearSprite.runAction(SKAction.repeatActionForever(action))
+            self.addChild(gearSprite)
+        } else {
                 gearSprite.removeFromParent()
             }
-        }
     }
     
     private func displayEmptyBoard() {
