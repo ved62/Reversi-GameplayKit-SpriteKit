@@ -1,5 +1,5 @@
 //
-//  ChipImage.swift
+//  ChipImages.swift
 //
 //  Reversi OS X
 //  
