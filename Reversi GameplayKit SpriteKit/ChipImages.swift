@@ -1,6 +1,7 @@
 //
 //  ChipImage.swift
-//  Try3/Try4 
+//
+//  Reversi
 //  
 //  This class is using for creating different images for the game usage
 //
@@ -10,24 +11,12 @@
 
 import AppKit
 
-final class ChipImage {
-    // Just white circle
-    var whiteImage: NSImage!
-    var whiteCGImage: CGImage!
-    var whiteCIImage: CIImage!
-
-    // Just black circle
-    var blackImage: NSImage!
-    var blackCIImage: CIImage!
-    var blackCGImage: CGImage!
+final class ChipImages {
 
     // cell image - background and yelow border
     var cellImage: NSImage!
     var cellCGImage: CGImage!
     var cellCIImage: CIImage!
-
-    var whiteChip: NSImage! // White circle with background for sprite
-    var blackChip: NSImage! // Black circle with background for sprite
 
     // chip images with light effect
     var whiteChipWithLight: NSImage!
