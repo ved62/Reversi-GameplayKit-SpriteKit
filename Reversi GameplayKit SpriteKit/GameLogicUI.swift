@@ -160,7 +160,7 @@ final class GameLogicUI: SKScene {
     private func drawCountsLabel() {
         let topSquare = self.childNodeWithName("74") as! SKSpriteNode
         let fontSize = topSquare.frame.height * 0.8
-        let y = topSquare.frame.maxY + (fontSize/2)
+        let y = topSquare.frame.maxY + (fontSize/2) - 1
         let countsLabel = SKLabelNode(fontNamed: Constants.Fonts.countsFont)
         countsLabel.text = "White: 0  Black: 0"
         countsLabel.fontSize = fontSize

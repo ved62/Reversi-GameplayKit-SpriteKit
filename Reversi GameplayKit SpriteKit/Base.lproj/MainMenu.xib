@@ -669,7 +669,7 @@
         </menu>
         <window title="Reversi GameplayKit SpriteKit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES"/>
             <rect key="contentRect" x="343" y="17" width="640" height="760"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ" customClass="SKView">
