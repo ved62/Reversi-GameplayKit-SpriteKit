@@ -88,7 +88,7 @@ final class GameLogicUI: SKScene {
     }
 
     private func createAtlas() -> SKTextureAtlas {
-        let chipImages = ChipImage()
+        let chipImages = ChipImages()
         let dictionary = [
             Constants.ChipImages.whiteChip: chipImages.whiteChipWithLight,
             Constants.ChipImages.blackChip: chipImages.blackChipWithLight,

@@ -1,7 +1,7 @@
 //
 //  ChipImage.swift
 //
-//  Reversi
+//  Reversi OS X
 //  
 //  This class is using for creating different images for the game usage
 //
@@ -28,20 +28,6 @@ final class ChipImages {
 
     let size = NSSize(width: 100, height: 100)
 
-    private func createWhiteImage() -> NSImage {
-
-        let whiteImage = NSImage(size: size, flipped: false,
-            drawingHandler: {rect in
-            let circlePath = NSBezierPath(ovalInRect: rect)
-            let circleColor = NSColor.whiteColor()
-            circleColor.set()
-            circlePath.fill()
-            circlePath.stroke()
-            return true
-        })
-        return whiteImage
-    }
-
     private func chipWithLight(color: NSColor) -> NSImage {
         func handler(rect: NSRect) -> Bool {
             let circlePath = NSBezierPath(ovalInRect: rect)
@@ -60,33 +46,8 @@ final class ChipImages {
             circlePath.stroke()
             return true
         }
-        let chip = NSImage(size: size, flipped: false,
+        return NSImage(size: size, flipped: false,
             drawingHandler:handler)
-        return chip
-    }
-
-    private func createChip(color: NSColor) -> NSImage {
-        func handler(rect: NSRect) -> Bool {
-            let borderPath = NSBezierPath(rect: rect)
-            var fillColor: NSColor
-            if let paternImage = NSImage(named: Constants.cellBackgroundImage)
-            {
-                fillColor = NSColor(patternImage: paternImage)
-            } else {
-                fillColor = NSColor.greenColor()
-            }
-            fillColor.setFill()
-            borderPath.fill()
-            let circlePath = NSBezierPath(ovalInRect: rect)
-            let circleColor = color
-            circleColor.set()
-            circlePath.fill()
-            circlePath.stroke()
-            return true
-        }
-        let cellImage = NSImage(size: size, flipped: false,
-            drawingHandler:handler)
-        return cellImage
     }
 
     private func createCellImage() -> NSImage {
@@ -107,37 +68,13 @@ final class ChipImages {
             borderPath.stroke()
             return true
         }
-        let cellImage = NSImage(size: size, flipped: false, drawingHandler:handler)
-        return cellImage
-    }
-
-    private func invertColor(image: CIImage) -> CIImage {
-        let colorInvert = CIFilter(name: "CIColorInvert")
-        colorInvert!.setValue(image, forKey: kCIInputImageKey)
-        return colorInvert!.outputImage!
-    }
-
-    private func convertCIImageToCGImage(inputImage: CIImage) -> CGImage! {
-        let context = CIContext(options: nil)
-        return context.createCGImage(inputImage, fromRect: inputImage.extent)
+        return NSImage(size: size, flipped: false, drawingHandler:handler)
     }
 
     init() {
-        whiteImage = createWhiteImage()
-        whiteCGImage = whiteImage.CGImageForProposedRect(nil,
-            context: nil, hints: nil)
-        whiteCIImage = CIImage(CGImage: whiteCGImage!)
-        blackCIImage = invertColor(whiteCIImage!)
-        blackCGImage = convertCIImageToCGImage(blackCIImage!)
-        blackImage = NSImage(CGImage: blackCGImage!,
-            size: NSZeroSize)
-
         cellImage = createCellImage()
         cellCGImage = cellImage.CGImageForProposedRect(nil, context: nil, hints: nil)
         cellCIImage = CIImage(CGImage: cellCGImage)
-
-        whiteChip = createChip(NSColor.lightGrayColor())
-        blackChip = createChip(NSColor.blackColor())
 
         whiteChipWithLight = chipWithLight(NSColor.whiteColor())
         whiteCGChipWithLight = whiteChipWithLight.CGImageForProposedRect(nil,
