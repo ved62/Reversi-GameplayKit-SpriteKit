@@ -40,7 +40,7 @@ let directions: [(row: Int,col: Int)] =
 
 // this function is used by both isValidMove and flipCells
 func checkOneDirection(board: Board,_ color: CellType,_ row: Int,_ col: Int,
-    dir: (row: Int,col: Int) ) -> Move? {
+    _ dir: (row: Int,col: Int) ) -> Move? {
 
     // closure to check if we are on board
     let positionOutOfRange = {return ($0<0) || ($0>7)}
@@ -68,7 +68,8 @@ func checkOneDirection(board: Board,_ color: CellType,_ row: Int,_ col: Int,
     }
     if board[nextRow,nextCol] == color
     {
-        return Move(row: nextRow, column: nextCol) // we have find a possible move
+        return Move(row: nextRow, column: nextCol)
+        // we have find a possible move
     }
     return nil
 }
@@ -78,7 +79,7 @@ func isValidMove(board: Board,_ color: CellType,_ row: Int,_ col: Int) -> Bool {
         return false
     }
     for dir in directions {
-        if checkOneDirection(board, color, row, col, dir: dir) != nil {
+        if checkOneDirection(board, color, row, col, dir) != nil {
             return true
         }
     }

@@ -52,17 +52,16 @@ final class GameModel: NSObject, GKGameModel {
     // gameModelUpdatesForPlayer is required by GKGameModel protocol
     func gameModelUpdatesForPlayer(player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
         let player = player as! Player
-        if player != currentPlayer {
-            return nil
-        }
         var moves: [Move] = []
+
         for row in 0..<8 {
             for col in 0..<8 {
-                if isValidMove(board, player.color, row, col) {
+                if isValidMove(self.board, player.color, row, col) {
                     moves.append(Move(row: row, column: col))
                 }
             }
         }
+
         player.numberOfMoves = moves.count
         if moves.isEmpty { return nil }
         return moves
@@ -95,7 +94,7 @@ final class GameModel: NSObject, GKGameModel {
         let playerColor = currentPlayer.color
 
         for dir in directions {
-            if let move = checkOneDirection(board,playerColor,row,col,dir:dir)
+            if let move = checkOneDirection(board,playerColor,row,col,dir)
             { // we have find a valid move
                 var nextRow = move.row - dir.row
                 var nextCol = move.column - dir.col

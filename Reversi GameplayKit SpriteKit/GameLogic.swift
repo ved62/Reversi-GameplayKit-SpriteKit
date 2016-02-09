@@ -24,7 +24,7 @@ final class GameLogic {
 
         for dir in directions {
             if let move = checkOneDirection(gameModel.board,playerColor,
-                row,col,dir:dir)
+                row,col,dir)
             { // we have find a valid move
                 var nextRow = move.row - dir.row
                 var nextCol = move.column - dir.col
@@ -74,16 +74,17 @@ final class GameLogic {
         let delay = 1.0
         let time = dispatch_time(DISPATCH_TIME_NOW,
             Int64(delay*Double(NSEC_PER_SEC)))
-        let uQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
         gameScene.showAIIndicator(true)
-        dispatch_after(time, uQueue, {
+        let mQueue = dispatch_get_main_queue()
+        dispatch_after(time, mQueue, {
             let move = strategist.bestMoveForActivePlayer() as! Move
-            let mQueue = dispatch_get_main_queue()
             dispatch_async(mQueue, {
                 self.gameScene.showAIIndicator(false)
-                self.makeMove(move.row, move.column)
                 })
+            dispatch_async(mQueue, {
+                self.makeMove(move.row, move.column)
             })
+        })
     }
 
     func gameIsFinished() -> Bool {
