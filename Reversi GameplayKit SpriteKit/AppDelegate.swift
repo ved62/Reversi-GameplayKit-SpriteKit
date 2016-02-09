@@ -10,7 +10,7 @@ import SpriteKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     @IBOutlet weak var gameView: SKView!
 
     private var gameScene: GameLogicUI!
@@ -23,7 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return true
     }
-
 
 }
 

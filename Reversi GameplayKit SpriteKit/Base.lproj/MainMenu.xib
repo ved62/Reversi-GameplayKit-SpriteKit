@@ -14,7 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Reversi_GameplayKit_SpriteKit" customModuleProvider="target">
             <connections>
-                <outlet property="gameView" destination="bK1-83-Jn9" id="xQt-vB-yhz"/>
+                <outlet property="gameView" destination="EiT-Mj-1SZ" id="VRZ-oA-v0F"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -671,21 +671,10 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="343" y="17" width="640" height="760"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="EiT-Mj-1SZ" customClass="SKView">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="760"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="bK1-83-Jn9" userLabel="SKView" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="640" height="760"/>
-                    </customView>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="bK1-83-Jn9" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" id="AK6-jX-gRR"/>
-                    <constraint firstItem="bK1-83-Jn9" firstAttribute="height" secondItem="EiT-Mj-1SZ" secondAttribute="height" id="STd-U6-Dur"/>
-                    <constraint firstItem="bK1-83-Jn9" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="gTB-Yv-niP"/>
-                    <constraint firstItem="bK1-83-Jn9" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="imJ-4q-sxD"/>
-                </constraints>
             </view>
         </window>
     </objects>
