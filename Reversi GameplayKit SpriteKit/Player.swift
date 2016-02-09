@@ -1,6 +1,6 @@
 //
 //  Player.swift
-//  Try6
+//  Reversi
 //
 //  Created by Владислав Эдуардович Дембский on 04.02.16.
 //  Copyright © 2016 Vladislav Dembskiy. All rights reserved.
@@ -10,10 +10,10 @@ import GameplayKit
 
 class Player: NSObject, GKGameModelPlayer {
     private let id: Int
-
     // required by the GKGameModelPlayer protocol
     var playerId: Int {return id}
 
+    // Playyer color - White or Black
     let color: CellType
 
     var opponent : Player {
