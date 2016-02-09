@@ -70,13 +70,14 @@ final class GameLogic {
     private func aiMove() {
         let strategist = GKMinmaxStrategist()
         strategist.gameModel = gameModel
-        strategist.maxLookAheadDepth = 5
+        strategist.maxLookAheadDepth = 6
         let delay = 1.0
         let time = dispatch_time(DISPATCH_TIME_NOW,
             Int64(delay*Double(NSEC_PER_SEC)))
         gameScene.showAIIndicator(true)
         let mQueue = dispatch_get_main_queue()
-        dispatch_after(time, mQueue, {
+        let cQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+        dispatch_after(time, cQueue, {
             let move = strategist.bestMoveForActivePlayer() as! Move
             dispatch_async(mQueue, {
                 self.gameScene.showAIIndicator(false)
