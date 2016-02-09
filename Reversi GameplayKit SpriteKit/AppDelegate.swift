@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Reversi GameplayKit SpriteKit
+//  Reversi OS X
 //
 //  Created by Владислав Эдуардович Дембский on 06.02.16.
 //  Copyright © 2016 Vladislav Dembskiy. All rights reserved.
@@ -20,7 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         gameView.presentScene(gameScene)
     }
 
-    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication)
+        -> Bool
+    {
         return true
     }
 
