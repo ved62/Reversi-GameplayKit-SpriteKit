@@ -11,6 +11,7 @@ enum CellType: Int {
     case Empty = 0, White = 1, Black = -1
 }
 
+// Array 2D - grid 8x8
 struct Board {
     // array to store the game board representation
     var grid = [CellType](count: 64, repeatedValue: .Empty)
@@ -29,7 +30,7 @@ let numberOfCells = { (board: Board,color: CellType) -> Int in
     return board.grid.filter({$0 == color}).count
     }
 
-// array to keep both game playyers information
+// array to keep both game players information
 let gamePlayers = [Player(playerColor: .White),Player(playerColor: .Black)]
 
 // Array to keep all possible directions within game board
@@ -67,9 +68,8 @@ func checkOneDirection(board: Board,_ color: CellType,_ row: Int,_ col: Int,
         }
     }
     if board[nextRow,nextCol] == color
-    {
+    {   // we have found a possible move
         return Move(row: nextRow, column: nextCol)
-        // we have find a possible move
     }
     return nil
 }
