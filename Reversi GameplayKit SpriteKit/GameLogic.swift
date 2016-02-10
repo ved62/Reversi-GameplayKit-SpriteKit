@@ -112,6 +112,9 @@ final class GameLogic {
             }
             return
         }
+        if (row == -1) && (column == -1) {
+            return // to allow user click in any place after alert
+        }
         if gameModel.currentPlayer == gamePlayers[0] {
             if isValidMove(gameModel.board, gameModel.currentPlayer.color,
                 row, column) {

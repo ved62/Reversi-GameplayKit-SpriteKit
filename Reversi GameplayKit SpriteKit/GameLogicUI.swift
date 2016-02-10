@@ -27,16 +27,12 @@ final class GameLogicUI: SKScene {
     override func mouseDown(theEvent: NSEvent) {
         let location = theEvent.locationInNode(self)
         if let node: SKSpriteNode = nodeAtPoint(location) as? SKSpriteNode {
-            var row = -1
-            var column = -1
-            if node.name != nil {
-                if let num = Int(node.name!) {
-                    row = num / 10
-                    column = num % 10
-                }
+            if let num = Int(node.name!) {
+                let row = num / 10
+                let column = num % 10
+                gameLogic.cellPressed(row,column)
             }
-            gameLogic.cellPressed(row,column)
-        }
+        } else {gameLogic.cellPressed(-1,-1)}
     }
 
     func displayChip(color: CellType,row: Int,column: Int) {
@@ -46,6 +42,7 @@ final class GameLogicUI: SKScene {
             atlas.textureNamed(Constants.ChipImages.whiteChip) :
             atlas.textureNamed(Constants.ChipImages.blackChip)
         let chip = SKSpriteNode(texture: texture, size: chipSize)
+        chip.name = cell.name
         chip.zPosition = 1
         cell.addChild(chip)
     }

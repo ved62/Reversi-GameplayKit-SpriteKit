@@ -53,7 +53,6 @@ final class GameModel: NSObject, GKGameModel {
     func gameModelUpdatesForPlayer(player: GKGameModelPlayer) -> [GKGameModelUpdate]? {
         let player = player as! Player
         var moves: [Move] = []
-
         for row in 0..<8 {
             for col in 0..<8 {
                 if isValidMove(self.board, player.color, row, col) {
@@ -61,7 +60,6 @@ final class GameModel: NSObject, GKGameModel {
                 }
             }
         }
-
         player.numberOfMoves = moves.count
         if moves.isEmpty { return nil }
         return moves
