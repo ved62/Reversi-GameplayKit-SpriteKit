@@ -8,7 +8,7 @@
 
 import GameplayKit
 
-class Player: NSObject, GKGameModelPlayer {
+final class Player: NSObject, GKGameModelPlayer {
     private let id: Int
     // required by the GKGameModelPlayer protocol
     var playerId: Int {return id}
