@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		997373811C6D17EB00FBEDAC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997373801C6D17EB00FBEDAC /* Board.swift */; };
 		99E1A2761C66343C0035A22D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E1A2751C66343C0035A22D /* AppDelegate.swift */; };
 		99E1A2781C66343C0035A22D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E1A2771C66343C0035A22D /* Assets.xcassets */; };
 		99E1A27B1C66343C0035A22D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E1A2791C66343C0035A22D /* MainMenu.xib */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		997373801C6D17EB00FBEDAC /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		99E1A2721C66343C0035A22D /* Reversi GameplayKit SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reversi GameplayKit SpriteKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E1A2751C66343C0035A22D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E1A2771C66343C0035A22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				99E1A2831C6636420035A22D /* GameLogic.swift */,
 				99E1A2841C6636420035A22D /* Common.swift */,
 				99E1A2851C6636420035A22D /* Player.swift */,
+				997373801C6D17EB00FBEDAC /* Board.swift */,
 				99E1A2861C6636420035A22D /* Constants.swift */,
 				99E1A2871C6636420035A22D /* ChipImages.swift */,
 				99E1A2881C6636420035A22D /* GameModel.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				99E1A28D1C6636420035A22D /* Constants.swift in Sources */,
 				99E1A28C1C6636420035A22D /* Player.swift in Sources */,
+				997373811C6D17EB00FBEDAC /* Board.swift in Sources */,
 				99E1A28A1C6636420035A22D /* GameLogic.swift in Sources */,
 				99E1A28E1C6636420035A22D /* ChipImages.swift in Sources */,
 				99E1A2901C6636420035A22D /* Move.swift in Sources */,

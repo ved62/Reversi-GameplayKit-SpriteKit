@@ -6,30 +6,6 @@
 //  Copyright © 2016 Vladislav Dembskiy. All rights reserved.
 //
 
-// enum for board cells
-enum CellType: Int {
-    case Empty = 0, White = 1, Black = -1
-}
-
-// Array 2D - grid 8x8
-struct Board {
-    // array to store the game board representation
-    private var grid = [CellType](count: 64, repeatedValue: .Empty)
-
-    subscript (row: Int, column: Int) -> CellType {
-        get {
-            return grid[row*8 + column]
-        }
-        set {
-            grid[row*8 + column] = newValue
-        }
-    }
-}
-
-let numberOfCells = { (board: Board,color: CellType) -> Int in
-    return board.grid.filter({$0 == color}).count
-    }
-
 // array to keep both game players information
 let gamePlayers = [Player(playerColor: .White),Player(playerColor: .Black)]
 
@@ -46,6 +22,7 @@ func checkOneDirection(board: Board,_ color: CellType,_ row: Int,_ col: Int,
     // closure to check if we are on board
     let positionOutOfRange = {return ($0<0) || ($0>7)}
     let opponentColor: CellType = (color == .White) ? .Black : .White
+        
     var nextRow = row + dir.row
     if positionOutOfRange(nextRow) {
         return nil
