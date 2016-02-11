@@ -55,9 +55,9 @@ final class GameModel: NSObject, GKGameModel {
         var moves: [Move] = []
         for row in 0..<8 {
             for col in 0..<8 {
-                if isValidMove(self.board, player.color, row, col) {
-                    moves.append(Move(row: row, column: col))
-                }
+                    if isValidMove(self.board, player.color, row, col) {
+                        moves.append(Move(row: row, column: col))
+                    }
             }
         }
         player.numberOfMoves = moves.count
@@ -90,7 +90,6 @@ final class GameModel: NSObject, GKGameModel {
     
     private func flipCells(row: Int,_ col: Int) {
         let playerColor = currentPlayer.color
-
         for dir in directions {
             if let move = checkOneDirection(board,playerColor,row,col,dir)
             { // we have find a valid move
@@ -105,4 +104,5 @@ final class GameModel: NSObject, GKGameModel {
             }
         }
     }
+
 }

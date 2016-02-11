@@ -14,7 +14,7 @@ enum CellType: Int {
 // Array 2D - grid 8x8
 struct Board {
     // array to store the game board representation
-    var grid = [CellType](count: 64, repeatedValue: .Empty)
+    private var grid = [CellType](count: 64, repeatedValue: .Empty)
 
     subscript (row: Int, column: Int) -> CellType {
         get {
