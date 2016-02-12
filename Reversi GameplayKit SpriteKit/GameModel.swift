@@ -92,7 +92,7 @@ final class GameModel: NSObject, GKGameModel {
         let playerColor = currentPlayer.color
         for dir in directions {
             if let move = checkOneDirection(board,playerColor,row,col,dir)
-            { // we have find a valid move
+            {   // we have find a valid move
                 // go back and flip
                 for var nextRow = move.row - dir.row,
                     nextCol = move.column - dir.col;

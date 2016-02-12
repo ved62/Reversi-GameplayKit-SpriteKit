@@ -48,7 +48,17 @@ final class GameLogic {
 
         if gameIsFinished() {
             alertActive = true
-            gameScene.displayAlert("Game over")
+            var resultText: String
+            switch white-black {
+            case 1...64:
+                resultText = "White win"
+            case 0:
+                resultText = "Draw"
+            default:
+                resultText = "Black win"
+
+            }
+            gameScene.displayAlert(resultText)
             return
         }
 
