@@ -33,8 +33,8 @@ final class ChipImages {
                 NSColor.whiteColor() : NSColor.lightGrayColor()
             let gradient = NSGradient(startingColor: startColor,
                 endingColor: endColor)
-            let center = NSPoint(x: rect.midX, y: rect.midY)
-            let lightPoint = NSPoint(x: center.x+(rect.width/10),
+            let center = CGPoint(x: rect.midX, y: rect.midY)
+            let lightPoint = CGPoint(x: center.x+(rect.width/10),
                 y: center.y+(rect.height/10))
             gradient?.drawFromCenter(center, radius: rect.width/2,
                 toCenter: lightPoint, radius: 0, options: 0)

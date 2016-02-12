@@ -37,7 +37,8 @@ final class GameLogicUI: SKScene {
 
     func displayChip(color: CellType,row: Int,column: Int) {
         let cell = childNodeWithName("\(row)\(column)") as! SKSpriteNode
-        let chipSize = NSMakeSize(cell.size.width*0.8, cell.size.height*0.8)
+        let chipSize = CGSize(width: cell.size.width*0.8,
+            height: cell.size.height*0.8)
         let texture = color == .White ?
             atlas.textureNamed(Constants.ChipImages.whiteChip) :
             atlas.textureNamed(Constants.ChipImages.blackChip)
