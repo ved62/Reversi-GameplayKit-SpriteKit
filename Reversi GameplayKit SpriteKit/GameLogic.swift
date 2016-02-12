@@ -21,20 +21,18 @@ final class GameLogic {
 
     private func flipCells(row: Int,_ col: Int) {
         let playerColor = gameModel.currentPlayer.color
-
         for dir in directions {
             if let move = checkOneDirection(gameModel.board,playerColor,
                 row,col,dir)
             { // we have find a valid move
-                var nextRow = move.row - dir.row
-                var nextCol = move.column - dir.col
                 // go back and flip
-                while (nextRow != row) || (nextCol != col) {
+                for var nextRow = move.row - dir.row,
+                    nextCol = move.column - dir.col;
+                    (nextRow != row) || (nextCol != col);
+                    nextRow -= dir.row, nextCol -= dir.col {
                     gameScene.updateChip(playerColor, nextRow,
                         nextCol)
                     gameModel.board[nextRow,nextCol] = playerColor
-                    nextRow -= dir.row
-                    nextCol -= dir.col
                 }
             }
         }
