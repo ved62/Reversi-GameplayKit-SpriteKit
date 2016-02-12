@@ -56,7 +56,6 @@ final class GameLogic {
                 resultText = "Draw"
             default:
                 resultText = "Black win"
-
             }
             gameScene.displayAlert(resultText)
             return

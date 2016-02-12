@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		997373801C6D17EB00FBEDAC /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		99E1A2721C66343C0035A22D /* Reversi GameplayKit SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reversi GameplayKit SpriteKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E1A2721C66343C0035A22D /* Reversi OS X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reversi OS X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E1A2751C66343C0035A22D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E1A2771C66343C0035A22D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E1A27A1C66343C0035A22D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		99E1A2731C66343C0035A22D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				99E1A2721C66343C0035A22D /* Reversi GameplayKit SpriteKit.app */,
+				99E1A2721C66343C0035A22D /* Reversi OS X.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,9 +90,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99E1A2711C66343C0035A22D /* Reversi GameplayKit SpriteKit */ = {
+		99E1A2711C66343C0035A22D /* Reversi OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99E1A27F1C66343C0035A22D /* Build configuration list for PBXNativeTarget "Reversi GameplayKit SpriteKit" */;
+			buildConfigurationList = 99E1A27F1C66343C0035A22D /* Build configuration list for PBXNativeTarget "Reversi OS X" */;
 			buildPhases = (
 				99E1A26E1C66343C0035A22D /* Sources */,
 				99E1A26F1C66343C0035A22D /* Frameworks */,
@@ -102,9 +102,9 @@
 			);
 			dependencies = (
 			);
-			name = "Reversi GameplayKit SpriteKit";
+			name = "Reversi OS X";
 			productName = "Reversi GameplayKit SpriteKit";
-			productReference = 99E1A2721C66343C0035A22D /* Reversi GameplayKit SpriteKit.app */;
+			productReference = 99E1A2721C66343C0035A22D /* Reversi OS X.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,8 +127,8 @@
 					};
 				};
 			};
-			buildConfigurationList = 99E1A26D1C66343C0035A22D /* Build configuration list for PBXProject "Reversi GameplayKit SpriteKit" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 99E1A26D1C66343C0035A22D /* Build configuration list for PBXProject "Reversi OS X" */;
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99E1A2711C66343C0035A22D /* Reversi GameplayKit SpriteKit */,
+				99E1A2711C66343C0035A22D /* Reversi OS X */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +266,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -273,12 +274,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Reversi GameplayKit SpriteKit/Reversi GameplayKit SpriteKit.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Reversi GameplayKit SpriteKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Individual-Developer.Reversi-GameplayKit-SpriteKit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Reversi OS X";
 			};
 			name = Debug;
 		};
@@ -286,19 +288,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Reversi GameplayKit SpriteKit/Reversi GameplayKit SpriteKit.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Reversi GameplayKit SpriteKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Individual-Developer.Reversi-GameplayKit-SpriteKit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Reversi OS X";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		99E1A26D1C66343C0035A22D /* Build configuration list for PBXProject "Reversi GameplayKit SpriteKit" */ = {
+		99E1A26D1C66343C0035A22D /* Build configuration list for PBXProject "Reversi OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99E1A27D1C66343C0035A22D /* Debug */,
@@ -307,7 +310,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99E1A27F1C66343C0035A22D /* Build configuration list for PBXNativeTarget "Reversi GameplayKit SpriteKit" */ = {
+		99E1A27F1C66343C0035A22D /* Build configuration list for PBXNativeTarget "Reversi OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99E1A2801C66343C0035A22D /* Debug */,

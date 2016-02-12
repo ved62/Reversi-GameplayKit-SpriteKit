@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Reversi GameplayKit SpriteKit.xcodeproj">
+      location = "self:/Users/ved/Development/Reversi GameplayKit SpriteKit/Reversi OS X.xcodeproj">
    </FileRef>
 </Workspace>
