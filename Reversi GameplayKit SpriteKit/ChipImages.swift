@@ -22,10 +22,10 @@ final class ChipImages {
     var blackChipWithLight: NSImage!
     var blackCIChipWithLight: CIImage!
 
-    private let size = NSSize(width: 100, height: 100)
+    private let size = CGSize(width: 100, height: 100)
 
     private func chipWithLight(color: NSColor) -> NSImage {
-        func handler(rect: NSRect) -> Bool {
+        func handler(rect: CGRect) -> Bool {
             let circlePath = NSBezierPath(ovalInRect: rect)
             let startColor: NSColor = (color == NSColor.whiteColor()) ?
                 NSColor.lightGrayColor() : NSColor.blackColor()
@@ -46,7 +46,7 @@ final class ChipImages {
     }
 
     private func createCellImage() -> NSImage {
-        func handler(rect: NSRect) -> Bool {
+        func handler(rect: CGRect) -> Bool {
             let borderPath = NSBezierPath(rect: rect)
             let borderColor = NSColor.yellowColor()
             var fillColor: NSColor
