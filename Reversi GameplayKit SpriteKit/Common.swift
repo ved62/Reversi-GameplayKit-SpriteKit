@@ -20,7 +20,7 @@ func checkOneDirection(board: Board,_ color: CellType,_ row: Int,_ col: Int,
     _ dir: (row: Int,col: Int) ) -> Move? {
 
     // closure to check if we are on board
-    let positionOutOfRange = {return ($0<0) || ($0>7)}
+    let positionOutOfRange = {return !(0...7 ~= $0)}
     let opponentColor: CellType = (color == .White) ? .Black : .White
         
     var nextRow = row + dir.row
