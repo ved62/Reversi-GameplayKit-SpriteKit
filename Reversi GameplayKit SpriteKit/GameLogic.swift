@@ -26,14 +26,23 @@ final class GameLogic {
                 row,col,dir)
             { // we have find a valid move
                 // go back and flip
-                for var nextRow = move.row - dir.row,
+                var nextRow = move.row - dir.row
+                var nextCol = move.column - dir.col
+                while (nextRow != row) || (nextCol != col) {
+                    gameScene.updateChip(playerColor, nextRow,
+                                         nextCol)
+                    gameModel.board[nextRow,nextCol] = playerColor
+                    nextRow -= dir.row
+                    nextCol -= dir.col
+                }
+          /*      for var nextRow = move.row - dir.row,
                     nextCol = move.column - dir.col;
                     (nextRow != row) || (nextCol != col);
                     nextRow -= dir.row, nextCol -= dir.col {
                     gameScene.updateChip(playerColor, nextRow,
                         nextCol)
                     gameModel.board[nextRow,nextCol] = playerColor
-                }
+                } */
             }
         }
     }
